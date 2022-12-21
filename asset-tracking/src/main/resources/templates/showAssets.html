@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+  <head>
+    <title>Assets</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <h2>List of assets</h2>
+
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Serial Number</th>
+        <th>Created Date</th>
+      </tr>
+      <!-- <tr> -->
+      <tr th:each="asset : ${assets}">
+        <td th:text="${asset.id}">Id</td>
+        <td th:text="${asset.name}">Name</td>
+        <td th:text="${asset.description}">Description</td>
+        <td th:text="${asset.serialalphanumber}">Serial Number</td>
+        <td th:text="${asset.createddate}">Created Date</td>
+      </tr>
+    </table>
+  </body>
+</html>
